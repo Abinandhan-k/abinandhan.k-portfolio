@@ -1,7 +1,7 @@
-// Footer year
+// Auto-update copyright year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Mobile nav toggle
+// Mobile Navigation Toggle
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 
@@ -11,7 +11,6 @@ if (navToggle && navMenu) {
     navToggle.setAttribute('aria-expanded', String(isOpen));
   });
 
-  // Close mobile menu after a link is clicked
   navMenu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       navMenu.classList.remove('is-open');
@@ -20,10 +19,9 @@ if (navToggle && navMenu) {
   });
 }
 
-// Dark Mode Toggle on Logo Click
+// Dark / Light Theme Switcher on Logo Click
 const themeToggleBtn = document.getElementById('themeToggle');
 
-// Check saved user preference or system preference on load
 const savedTheme = localStorage.getItem('theme');
 const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -44,7 +42,7 @@ if (themeToggleBtn) {
   });
 }
 
-// Highlight active section link on scroll
+// Highlight active navigation section on scroll
 const sections = document.querySelectorAll('main section[id]');
 const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
 
