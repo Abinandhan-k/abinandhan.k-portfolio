@@ -2,34 +2,34 @@
    DESIGN TOKENS & COLOR PALETTES
    ============================================ */
 :root {
-  /* Premium Soft Light Theme */
-  --bg: #F4F6FB;
+  /* Refined Light Theme (Slate, Soft Indigo & Warm Accents) */
+  --bg: #F1F5F9;
   --surface: #FFFFFF;
   --surface-subtle: #F8FAFC;
   --border: #E2E8F0;
   --border-hover: #CBD5E1;
   
   --text-primary: #0F172A;
-  --text-secondary: #475569;
+  --text-secondary: #334155;
   --text-muted: #64748B;
 
-  --accent: #2563EB;        /* Royal Blue */
-  --accent-dark: #1E40AF;
+  --accent: #3B82F6;        /* Modern Indigo Blue */
+  --accent-dark: #1D4ED8;
   --accent-soft: #EFF6FF;
 
-  --accent-2: #7C3AED;      /* Violet */
+  --accent-2: #8B5CF6;      /* Violet Gradient Accent */
   --accent-2-soft: #F5F3FF;
 
-  --accent-teal: #0D9488;
-  --accent-teal-soft: #CCFBF1;
+  --accent-teal: #10B981;   /* Emerald */
+  --accent-teal-soft: #ECFDF5;
 
-  --accent-amber: #D97706;
-  --accent-amber-soft: #FEF3C7;
+  --accent-amber: #F59E0B;  /* Amber */
+  --accent-amber-soft: #FFFBEB;
 
-  --accent-rose: #E11D48;
-  --accent-rose-soft: #FFE4E6;
+  --accent-rose: #F43F5E;   /* Rose */
+  --accent-rose-soft: #FFF1F2;
 
-  --gradient-brand: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+  --gradient-brand: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
 
   --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
   --font-body: 'Inter', 'Segoe UI', sans-serif;
@@ -37,30 +37,30 @@
 
   --max-width: 1100px;
   --radius: 12px;
-  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
   --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
   --shadow-lg: 0 20px 30px -10px rgba(15, 23, 42, 0.12);
 
   --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Dark Mode Overrides */
+/* Dark Mode Palette */
 [data-theme="dark"] {
-  --bg: #0D111A;
-  --surface: #161C2A;
-  --surface-subtle: #1E2638;
-  --border: #242E42;
-  --border-hover: #374663;
+  --bg: #0B0F19;
+  --surface: #141C2E;
+  --surface-subtle: #1C263B;
+  --border: #232E45;
+  --border-hover: #364566;
 
   --text-primary: #F8FAFC;
   --text-secondary: #94A3B8;
   --text-muted: #64748B;
 
-  --accent-soft: rgba(37, 99, 235, 0.15);
-  --accent-2-soft: rgba(124, 58, 237, 0.15);
-  --accent-teal-soft: rgba(13, 148, 136, 0.15);
-  --accent-amber-soft: rgba(217, 119, 6, 0.15);
-  --accent-rose-soft: rgba(225, 29, 72, 0.15);
+  --accent-soft: rgba(59, 130, 246, 0.15);
+  --accent-2-soft: rgba(139, 92, 246, 0.15);
+  --accent-teal-soft: rgba(16, 185, 129, 0.15);
+  --accent-amber-soft: rgba(245, 158, 11, 0.15);
+  --accent-rose-soft: rgba(244, 63, 94, 0.15);
 
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
@@ -154,14 +154,14 @@ button:focus-visible {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(244, 246, 251, 0.85);
+  background: rgba(241, 245, 249, 0.85);
   backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid var(--border);
   transition: background-color var(--transition), border-color var(--transition);
 }
 
 [data-theme="dark"] .site-header {
-  background: rgba(13, 17, 26, 0.85);
+  background: rgba(11, 15, 25, 0.85);
 }
 
 .nav {
@@ -248,8 +248,8 @@ button:focus-visible {
   inset: -20% -10% auto -10%;
   height: 620px;
   background:
-    radial-gradient(480px 320px at 12% 20%, rgba(37, 99, 235, 0.12), transparent 70%),
-    radial-gradient(420px 320px at 88% 10%, rgba(124, 58, 237, 0.10), transparent 70%);
+    radial-gradient(480px 320px at 12% 20%, rgba(59, 130, 246, 0.12), transparent 70%),
+    radial-gradient(420px 320px at 88% 10%, rgba(139, 92, 246, 0.10), transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
