@@ -16,19 +16,10 @@
 
 <header class="site-header" id="site-header">
   <nav class="nav" aria-label="Primary">
-    <a href="#top" class="nav-logo">ABI<span class="nav-logo-dot">.</span></a>
-    
-    <div class="nav-right">
-      <!-- Dark Mode Toggle Button -->
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <svg class="icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-        <svg class="icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      </button>
-
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+    <!-- Clicking your logo toggles dark mode -->
+    <a href="javascript:void(0)" class="nav-logo" id="themeToggle" title="Click to toggle dark/light mode">
+      ABI<span class="nav-logo-dot">.</span>
+    </a>
 
     <ul class="nav-menu" id="navMenu">
       <li><a href="#about">About</a></li>
@@ -37,8 +28,15 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
+
+    <div class="nav-right">
+      <a href="#contact" class="nav-cta">Contact</a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 </header>
 
@@ -279,20 +277,20 @@
         </article>
 
         <article class="project-card">
-         <div class="project-card-head">
-          <h3>Hospital Management System</h3>
-             <span class="project-date">Apr 2024</span>
-         </div>
-           <ul class="project-points">
-              <li>Developed a CRUD-based application to manage patient, doctor, and pharmacy records seamlessly.</li>
-              <li>Integrated MySQL database and applied object-oriented programming principles for modular design.</li>
-              <li>Implemented asynchronous JavaScript (AJAX) for dynamic page updates and secure PHP backend validation for handling sensitive patient records.</li>
-           </ul>
-         <div class="tag-list">
-         <span class="tag"><img class="tag-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="" width="16" height="16">PHP</span>
-         <span class="tag"><img class="tag-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" width="16" height="16">JavaScript</span>
-         <span class="tag"><img class="tag-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="" width="16" height="16">MySQL</span>
-        </div>
+          <div class="project-card-head">
+            <h3>Hospital Management System</h3>
+            <span class="project-date">Apr 2024</span>
+          </div>
+          <ul class="project-points">
+            <li>Developed a CRUD-based application to manage patient, doctor, and pharmacy records seamlessly.</li>
+            <li>Integrated MySQL database and applied object-oriented programming principles for modular design.</li>
+            <li>Implemented asynchronous JavaScript (AJAX) for dynamic page updates and secure PHP backend validation for handling sensitive patient records.</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag"><img class="tag-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="" width="16" height="16">PHP</span>
+            <span class="tag"><img class="tag-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" width="16" height="16">JavaScript</span>
+            <span class="tag"><img class="tag-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="" width="16" height="16">MySQL</span>
+          </div>
         </article>
       </div>
     </div>
