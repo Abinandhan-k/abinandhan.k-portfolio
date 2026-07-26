@@ -2,7 +2,7 @@
    DESIGN TOKENS & COLOR PALETTES
    ============================================ */
 :root {
-  /* Premium Soft Light Theme (Off-white & slate depth) */
+  /* Premium Light Theme (Soft off-white with subtle glass depth) */
   --bg: #F4F6FB;
   --surface: #FFFFFF;
   --surface-subtle: #F8FAFC;
@@ -44,13 +44,13 @@
   --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Dark Mode Overrides */
+/* Enhanced Dark Mode Palette */
 [data-theme="dark"] {
-  --bg: #0B0F19;
-  --surface: #131B2E;
-  --surface-subtle: #1A243B;
-  --border: #1E293B;
-  --border-hover: #334155;
+  --bg: #0D111A;
+  --surface: #161C2A;
+  --surface-subtle: #1E2638;
+  --border: #242E42;
+  --border-hover: #374663;
 
   --text-primary: #F8FAFC;
   --text-secondary: #94A3B8;
@@ -62,13 +62,13 @@
   --accent-amber-soft: rgba(217, 119, 6, 0.15);
   --accent-rose-soft: rgba(225, 29, 72, 0.15);
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 20px 30px -10px rgba(0, 0, 0, 0.6);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 20px 30px -10px rgba(0, 0, 0, 0.7);
 }
 
 /* ============================================
-   RESET
+   RESET & GLOBAL STYLES
    ============================================ */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -160,7 +160,7 @@ button:focus-visible {
   transition: background-color var(--transition), border-color var(--transition);
 }
 [data-theme="dark"] .site-header {
-  background: rgba(11, 15, 25, 0.85);
+  background: rgba(13, 17, 26, 0.85);
 }
 
 .nav {
@@ -195,7 +195,7 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: border-color var(--transition), background-color var(--transition);
+  transition: border-color var(--transition), background-color var(--transition), color var(--transition);
 }
 .theme-toggle:hover {
   border-color: var(--accent);
@@ -217,6 +217,7 @@ button:focus-visible {
   transition: color var(--transition);
 }
 .nav-menu a:hover { color: var(--accent); }
+.nav-menu a.is-active:not(.nav-cta) { color: var(--accent); }
 .nav-menu a.nav-cta {
   color: #fff;
   background: var(--gradient-brand);
@@ -474,7 +475,7 @@ button:focus-visible {
 .timeline-meta { color: var(--text-muted); font-size: 0.88rem; margin-top: 0.2rem; }
 
 /* ============================================
-   CLEAN & ATTRACTIVE CARDS (Skills, Projects, Contact)
+   SKILLS SECTION & CARDS
    ============================================ */
 .skills-grid {
   display: grid;
@@ -530,7 +531,9 @@ button:focus-visible {
 .tag-glyph { font-size: 0.8rem; line-height: 1; color: var(--accent); }
 .tag-soft { background: var(--bg); border: 1px solid var(--border); color: var(--text-secondary); }
 
-/* Projects Grid */
+/* ============================================
+   PROJECTS & EXPERIENCE CARDS
+   ============================================ */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
@@ -587,7 +590,9 @@ button:focus-visible {
 .exp-card .timeline-org { margin-bottom: 0.9rem; }
 .exp-card .tag-list { margin-top: 1rem; }
 
-/* Certifications */
+/* ============================================
+   CERTIFICATIONS
+   ============================================ */
 .cert-list { max-width: 720px; }
 .cert-list li {
   position: relative;
@@ -614,7 +619,9 @@ button:focus-visible {
   justify-content: center;
 }
 
-/* Contact Grid */
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
 .contact-lead {
   color: var(--text-secondary);
   max-width: 60ch;
@@ -698,7 +705,7 @@ button:focus-visible {
 }
 
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE STYLES
    ============================================ */
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; }
