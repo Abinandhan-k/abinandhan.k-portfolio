@@ -1,35 +1,36 @@
 /* ============================================
    DESIGN TOKENS & COLOR PALETTES
    ============================================ */
-:root {
-  /* Ultra-Clean Deep Slate Theme (No stark white surfaces) */
-  --bg: #0B0F19;
-  --surface: #141C2E;
-  --surface-subtle: #1C263B;
-  --border: #232E45;
-  --border-hover: #3E4F73;
-  
-  --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
 
-  --accent: #3B82F6;        /* Modern Blue */
+/* LIGHT MODE (Default - Warm Linen & Slate Accent) */
+:root, [data-theme="light"] {
+  --bg: #F3F1EA;              /* Warm stone / linen tint */
+  --surface: #E8E5DC;         /* Distinct warm card surface (NO stark white) */
+  --surface-subtle: #DFDCCE;
+  --border: #D1CDBF;
+  --border-hover: #B5B09E;
+
+  --text-primary: #1C1B18;    /* Deep Charcoal */
+  --text-secondary: #4A4843;
+  --text-muted: #737067;
+
+  --accent: #2563EB;          /* Blue */
   --accent-dark: #1D4ED8;
-  --accent-soft: rgba(59, 130, 246, 0.15);
+  --accent-soft: rgba(37, 99, 235, 0.12);
 
-  --accent-2: #8B5CF6;      /* Violet */
-  --accent-2-soft: rgba(139, 92, 246, 0.15);
+  --accent-2: #7C3AED;        /* Violet */
+  --accent-2-soft: rgba(124, 58, 237, 0.12);
 
-  --accent-teal: #10B981;   /* Emerald */
-  --accent-teal-soft: rgba(16, 185, 129, 0.15);
+  --accent-teal: #0D9488;     /* Sage Teal */
+  --accent-teal-soft: rgba(13, 148, 136, 0.12);
 
-  --accent-amber: #F59E0B;  /* Amber */
-  --accent-amber-soft: rgba(245, 158, 11, 0.15);
+  --accent-amber: #D97706;    /* Amber */
+  --accent-amber-soft: rgba(217, 119, 6, 0.12);
 
-  --accent-rose: #F43F5E;   /* Rose */
-  --accent-rose-soft: rgba(244, 63, 94, 0.15);
+  --accent-rose: #E11D48;
+  --accent-rose-soft: rgba(225, 29, 72, 0.12);
 
-  --gradient-brand: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+  --gradient-brand: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
 
   --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
   --font-body: 'Inter', 'Segoe UI', sans-serif;
@@ -37,11 +38,34 @@
 
   --max-width: 1100px;
   --radius: 12px;
+  --shadow-sm: 0 1px 3px rgba(28, 27, 24, 0.06);
+  --shadow-md: 0 10px 25px -5px rgba(28, 27, 24, 0.1);
+  --shadow-lg: 0 20px 30px -10px rgba(28, 27, 24, 0.15);
+
+  --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* DARK MODE OVERRIDES */
+[data-theme="dark"] {
+  --bg: #0D111A;              /* Deep Midnight Slate */
+  --surface: #161C2A;         /* Slate Card */
+  --surface-subtle: #1E2638;
+  --border: #242E42;
+  --border-hover: #374663;
+
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+
+  --accent-soft: rgba(37, 99, 235, 0.18);
+  --accent-2-soft: rgba(124, 58, 237, 0.18);
+  --accent-teal-soft: rgba(13, 148, 136, 0.18);
+  --accent-amber-soft: rgba(217, 119, 6, 0.18);
+  --accent-rose-soft: rgba(225, 29, 72, 0.18);
+
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 20px 30px -10px rgba(0, 0, 0, 0.7);
-
-  --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ============================================
@@ -58,6 +82,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  transition: background-color var(--transition), color var(--transition);
 }
 h1, h2, h3 { font-family: var(--font-display); margin: 0; color: var(--text-primary); }
 p { margin: 0; }
@@ -106,6 +131,7 @@ button:focus-visible {
   background: var(--surface); 
   border-top: 1px solid var(--border); 
   border-bottom: 1px solid var(--border); 
+  transition: background-color var(--transition), border-color var(--transition);
 }
 
 .section-title {
@@ -123,15 +149,16 @@ button:focus-visible {
 }
 
 /* ============================================
-   HEADER & NAVIGATION
+   HEADER & LOGO TOGGLE
    ============================================ */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(11, 15, 25, 0.85);
+  background: var(--bg);
   backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid var(--border);
+  transition: background-color var(--transition), border-color var(--transition);
 }
 
 .nav {
@@ -146,7 +173,14 @@ button:focus-visible {
   font-weight: 600;
   font-size: 1.1rem;
   color: var(--text-primary);
+  cursor: pointer;
   user-select: none;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 .nav-logo-dot { color: var(--accent); }
@@ -211,8 +245,8 @@ button:focus-visible {
   inset: -20% -10% auto -10%;
   height: 620px;
   background:
-    radial-gradient(480px 320px at 12% 20%, rgba(59, 130, 246, 0.15), transparent 70%),
-    radial-gradient(420px 320px at 88% 10%, rgba(139, 92, 246, 0.12), transparent 70%);
+    radial-gradient(480px 320px at 12% 20%, rgba(37, 99, 235, 0.12), transparent 70%),
+    radial-gradient(420px 320px at 88% 10%, rgba(124, 58, 237, 0.10), transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -321,19 +355,19 @@ button:focus-visible {
 .code-card {
   width: 100%;
   max-width: 420px;
-  background: #090D16;
+  background: #0F172A;
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
   overflow: hidden;
-  border: 1px solid var(--border);
+  border: 1px solid #1E293B;
 }
 .code-card-bar {
   display: flex;
   align-items: center;
   gap: 6px;
   padding: 0.7rem 0.9rem;
-  background: #141C2E;
-  border-bottom: 1px solid var(--border);
+  background: #1E293B;
+  border-bottom: 1px solid #334155;
 }
 .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
 .dot-a { background: #EF4444; }
@@ -434,7 +468,7 @@ button:focus-visible {
 .timeline-meta { color: var(--text-muted); font-size: 0.88rem; margin-top: 0.2rem; }
 
 /* ============================================
-   SLATE CARDS (Skills, Projects, Experience, Contact)
+   SKILLS & CARDS
    ============================================ */
 .skills-grid {
   display: grid;
@@ -449,7 +483,7 @@ button:focus-visible {
   border-radius: var(--radius);
   padding: 1.1rem 1.25rem;
   box-shadow: var(--shadow-sm);
-  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition), background-color var(--transition);
 }
 
 .skill-card:hover {
@@ -480,8 +514,7 @@ button:focus-visible {
   gap: 0.4rem;
   font-family: var(--font-mono);
   font-size: 0.76rem;
-  background: var(--surface-subtle);
-  border: 1px solid var(--border);
+  background: var(--accent-soft);
   color: var(--text-primary);
   padding: 0.3rem 0.65rem;
   border-radius: 6px;
@@ -504,7 +537,7 @@ button:focus-visible {
   border-radius: var(--radius);
   padding: 1.35rem 1.45rem;
   box-shadow: var(--shadow-sm);
-  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition), background-color var(--transition);
 }
 
 .project-card:hover {
@@ -597,7 +630,7 @@ button:focus-visible {
   border-radius: var(--radius);
   padding: 0.9rem 1.1rem;
   box-shadow: var(--shadow-sm);
-  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition), background-color var(--transition);
 }
 
 .contact-card:hover {
@@ -655,6 +688,7 @@ button:focus-visible {
   font-size: 0.85rem;
   border-top: 1px solid var(--border);
   background: var(--surface);
+  transition: background-color var(--transition), border-color var(--transition);
 }
 
 /* ============================================
